@@ -14,12 +14,25 @@ console.log(resultOne(numbers), "Line 12 (soal 1)")
 
 const numbersTwo = [1, 2, 3, 4, 5, 6, 7, 8];
 //Tambahkan semua angka ganjil dalam array dan kembalikan hasilnya.
-let resultTwo
+let resultTwo = (inputNumber) => {
+    let total = 0
+    for (let index = 1; index <= inputNumber.length; index++) {
+        if (index % 2 !== 0) {
+            total = total + index
+        }
+    }
+    return total
+}
+console.log(resultTwo(numbersTwo), "Line 26 (soal 2)")
 
 
 // Ubah semua huruf kecil dalam array menjadi huruf besar
 let students = ["Tito", "arY", "Bostang"]
-let resultThree
+let resultThree = []
+students.forEach((el) => {
+    resultThree.push(el.toUpperCase())
+})
+console.log(resultThree, "Line 35 (soal 3")
 
 
 // Ambil hanya nama-nama orang yang umurnya di atas 18 tahun.
@@ -30,6 +43,15 @@ const people = [
     { name: 'Bostang', age: 22 },
     { name: 'Cici', age: 17 }
 ];
+let resultFour = []
+people.forEach((el) => {
+    if(el.age > 18){
+        if(el.name.length > 5){
+            resultFour.push(el.name)
+        }
+    }
+})
+console.log(resultFour, "Line 54 (soal 4)")
 
 
 // Hitung total harga semua barang
@@ -38,11 +60,24 @@ const items = [
     { name: 'Pen', price: 5000 },
     { name: 'Pencil', price: 3000 },
 ];
-  
+let resultFive = 0
+items.forEach((el) => {
+    resultFive = resultFive + el.price
+})
+console.log(resultFive , "Line 67 (soal 5)")  
+
 
 //Ambil hanya angka unik dari array (hapus duplikat).
 const numbersThree = [1, 2, 2, 3, 4, 4, 5];
-
+let resultSix = []
+let numberFirst = 0
+numbersThree.forEach((el) => {
+    if (el !== numberFirst) {
+        resultSix.push(el)
+        numberFirst = el
+    }
+})
+console.log(resultSix, "Line 80 (soal 6)")
 
 // Ambil nama produk dengan harga tertinggi
 const products = [
