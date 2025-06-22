@@ -122,8 +122,14 @@ for (let index = 0; index < names.length; index++) {
 }
 console.log(resultNine, "Line 123 (soal 9)");
 
+
 // Hitung total karakter dari semua nama dalam array.
 const namesTwo = ['Ani', 'Budi', 'Citra']; // 12 karakter
+let resultTen = 0
+namesTwo.forEach((el) => {
+    resultTen = resultTen + el.length
+})
+console.log(resultTen, "Line 132 (soal10)")
 
 
 // Output: ['Tono (22)', 'Tara (25)']
@@ -133,4 +139,10 @@ const peopleTwo = [
     { name: 'Tini', age: 19 },
     { name: 'Tara', age: 25 },
 ];
-
+let resultEleven = []
+peopleTwo.forEach((el) => {
+    if(el.age > 21){
+        resultEleven.push(`${el.name} ${el.age}`)
+    }
+})
+console.log(resultEleven, "Line 148 (soal 11)")
