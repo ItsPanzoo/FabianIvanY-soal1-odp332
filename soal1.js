@@ -85,15 +85,42 @@ const products = [
     { name: 'Phone', price: 8000000 },
     { name: 'Monitor', price: 3000000 },
 ];
+let numberSecond = 0
+let resultSeven = ""
+products.forEach((el) => {
+    if (el.price > numberSecond) {
+        resultSeven = el.name
+        numberSecond = el.price
+    }
+})
+console.log(resultSeven, "Line 96 (soal 7)")
 
 
 // Buat kalimat dari array kata.
 const words = ['Belajar', 'array', 'itu', 'menyenangkan'];
+let resultEight = ""
+words.forEach((el, index) => {
+    if(index === 0){
+        resultEight = el
+    } else{
+        resultEight = `${resultEight} ${el}`
+    }
+})
+console.log(resultEight, "Line 109 (soal 8)")
 
 
 // Ambil hanya 3 data pertama yang mengandung kata 'a' pada nama.
 const names = ['Aldo', 'Budi', 'Caca', 'Dinda', 'Eka', 'Fajar'];
-
+let resultNine = []
+for (let index = 0; index < names.length; index++) {
+    if(names[index].toLowerCase().includes('a')){
+        resultNine.push(names[index])
+    }
+    if(resultNine.length === 3){
+        break
+    }
+}
+console.log(resultNine, "Line 123 (soal 9)");
 
 // Hitung total karakter dari semua nama dalam array.
 const namesTwo = ['Ani', 'Budi', 'Citra']; // 12 karakter
