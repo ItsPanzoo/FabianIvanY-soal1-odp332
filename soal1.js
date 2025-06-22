@@ -1,6 +1,15 @@
 // Jumlahkan semua angka genap dalam array berikut
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8];
-let resultOne
+let resultOne = (inputNumber) => {
+    let total = 0
+    for (let index =1;index <= inputNumber.lenght; index++) {
+        if (index % 2 === 0) {
+            total = total + index
+        }
+    }
+    return total
+}
+console.log(resultOne(numbers), "Line 12 (soal 1)")
 
 
 const numbersTwo = [1, 2, 3, 4, 5, 6, 7, 8];
