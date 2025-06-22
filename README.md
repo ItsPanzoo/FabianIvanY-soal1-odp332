@@ -1,3 +1,2 @@
 # soal1-odp332
-
-//Fabian Ivan Yovinanda
+Fabian Ivan Yovinanda
