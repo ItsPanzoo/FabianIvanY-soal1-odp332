@@ -15,9 +15,9 @@ function checkOddEven() {
         }
 }
 
-console.log(checkOddEven(5)); // ganjil
-console.log(checkOddEven(2)); // genap
-console.log(checkOddEven("enam")); // invalid input
+console.log(checkOddEven(5),"Line 18 (soal 1)"); // ganjil
+console.log(checkOddEven(2),"Line 19 (soal 1)"); // genap
+console.log(checkOddEven("enam"),"Line 20 (soal 1)"); // invalid input
 
 
 
