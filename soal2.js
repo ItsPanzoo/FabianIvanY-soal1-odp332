@@ -28,13 +28,20 @@ console.log(checkOddEven("enam"),"Line 20 (soal 1)"); // invalid input
  */
 
 function checkMature() {
-
+    if(typeof umur !== "number" || umur < 0){
+        return "invalid input"
+    }
+    if(umur >= 18){
+        return "Dewasa"
+    } else{
+        return "Belum dewasa"
+    }
 }
 
-console.log(checkMature(18)); // Dewasa
-console.log(checkMature(17)); // Belum dewasa
-console.log(checkMature("enam")); // invalid input
-console.log(checkMature(-1)); // invalid input
+console.log(checkMature(18),"Line 41 (soal 2)"); // Dewasa
+console.log(checkMature(17),"Line 42 (soal 2)"); // Belum dewasa
+console.log(checkMature("enam"),"Line 43 (soal 2)"); // invalid input
+console.log(checkMature(-1),"Line 44 (soal 2)"); // invalid input
 
 
 
@@ -51,16 +58,29 @@ console.log(checkMature(-1)); // invalid input
  */
 
 function scoreReport() {
-
+    if(typeof nilai !== "number" || nilai < 0 || nilai > 100) {
+        return "invalid input"
+    }
+    if(nilai >= 90){
+        return "A"
+    } else if(nilai >= 80){
+        return "B"
+    } else if(nilai >= 70){
+        return "C"
+    } else if(nilai >= 60){
+        return "D"
+    } else{
+        return "E"
+    }
 }
 
-console.log(scoreReport(90)); // A
-console.log(scoreReport(89)); // B
-console.log(scoreReport(75)); // C
-console.log(scoreReport(59)); // E
-console.log(scoreReport(101)); // invalid input
-console.log(scoreReport(-1)); // invalid input
-console.log(scoreReport("sembilan puluh")); // invalid input
+console.log(scoreReport(90),"Line 77 (soal 3)"); // A
+console.log(scoreReport(89),"Line 78 (soal 3)"); // B
+console.log(scoreReport(75),"Line 79 (soal 3)"); // C
+console.log(scoreReport(59),"Line 80 (soal 3)"); // E
+console.log(scoreReport(101),"Line 81 (soal 3)"); // invalid input
+console.log(scoreReport(-1),"Line 82 (soal 3)"); // invalid input
+console.log(scoreReport("sembilan puluh"),"Line 83 (soal 3)"); // invalid input
 
 
 
@@ -71,7 +91,18 @@ console.log(scoreReport("sembilan puluh")); // invalid input
  */
 
 function loopCheckOddEven() {
-
+    if (typeof number !== "number") {
+        console.log("invalid input")
+        return
+    }
+    for (let index = 1; index <= number; index++) {
+        if (index % 2 !== 0) {
+            console.log(`${index} => Bilangan Ganjil`)
+        } else {
+            console.log(`${index} => Bilangan Genap`)
+        }
+    }
+    console.log("Line 105 (soal 4)")
 }
 
 loopCheckOddEven(5)
@@ -91,20 +122,19 @@ loopCheckOddEven("lima") // invalid input
  */
 
 function totalValue(inputNumber) {
-    if (typeof inputNumber === "number"){
-        let totalNumber = 0
-        for (let index = 1; index <=inputNumber;  index++){
-            totalNumber = totalNumber + index
-        }
-        console.log(totalNumber)
-    }else {
-        console.log("Invalid Number")
+    if (typeof inputNumber !== "number") {
+        return "invalid input"
     }
+    let totalNumber = 0
+    for (let index = 1; index <= inputNumber; index++) {
+        totalNumber = totalNumber + index
+    }
+    return totalNumber
 
 }
 
-console.log(totalValue(100)); // 5050
-console.log(totalValue("empat")); // invalid input
+console.log(totalValue(100),"Line 136 (soal 5)"); // 5050
+console.log(totalValue("empat"),"Line 137 (soal 5)"); // invalid input
 
 
 
@@ -115,11 +145,21 @@ console.log(totalValue("empat")); // invalid input
  */
 
 function checkVowels() {
-
+    const vokal = ["a", "e", "i", "o", "u"]
+    const inputChar = hurufVokal.toLowerCase().split('')
+    let totalHuruf = 0
+    for (let i = 0; i < hurufVokal.length; i++) {
+        for (let j = 0; j < vokal.length; j++) {
+            if(inputChar[i] === vokal[j]){
+                totalHuruf++
+            }
+        }
+    }
+    return totalHuruf
 }
 
-console.log(checkVowels("I Love JavaScript")); // 6
-console.log(checkVowels("mie ayam")); //4
+console.log(checkVowels("I Love JavaScript"),"Line 161 (soal 6)"); // 6
+console.log(checkVowels("mie ayam"),"Line 162 (soal 6)"); //4
 
 
 
@@ -138,11 +178,25 @@ console.log(checkVowels("mie ayam")); //4
 
 function checkVowelConsonant(char) {
     // code di scope ini yaa
+    let inputChar = char.toLowerCase()
+    if (inputChar === 'a') {
+        return "Vokal"
+    } else if (inputChar === 'e') {
+        return "Vokal"
+    } else if (inputChar === 'i') {
+        return "Vokal"
+    } else if (inputChar === 'o') {
+        return "Vokal"
+    } else if (inputChar === 'u') {
+        return "Vokal"
+    } else {
+        return "Konsonan"
+    }
 }
 
-console.log(checkVowelConsonant('A')); // Output: "Vokal"
-console.log(checkVowelConsonant('b')); // Output: "Konsonan"
-console.log(checkVowelConsonant('a')); // Output: "Vokal"
+console.log(checkVowelConsonant('A'),"Line 197 (soal 7)"); // Output: "Vokal"
+console.log(checkVowelConsonant('b'),"Line 198 (soal 7)"); // Output: "Konsonan"
+console.log(checkVowelConsonant('a'),"Line 199 (soal 7)"); // Output: "Vokal"
 
 
 
@@ -160,10 +214,15 @@ console.log(checkVowelConsonant('a')); // Output: "Vokal"
 
 function canVote(age) {
     // code di scope ini yaa
+    if (age >= 18) {
+        return true
+    } else {
+        return false
+    }
 }
 
-console.log(canVote(20)); // true
-console.log(canVote(17)); // false
+console.log(canVote(20),"Line 224 (soal 8)"); // true
+console.log(canVote(17),"Line 225 (soal 8)"); // false
 
 
 
@@ -189,11 +248,29 @@ console.log(canVote(17)); // false
 
 function getDayName(dayNumber) {
     // code disini
+    if (dayNumber > 7) {
+        return "Nomor hari tidak valid"
+    }
+    if (dayNumber === 1) {
+        return "Senin"
+    } else if (dayNumber === 2) {
+        return "Selasa"
+    } else if (dayNumber === 3) {
+        return "Rabu"
+    } else if (dayNumber === 4) {
+        return "Kamis"
+    } else if (dayNumber === 5) {
+        return "Jumat"
+    } else if (dayNumber === 6) {
+        return "Sabtu"
+    } else if (dayNumber === 7) {
+        return "Minggu"
+    }
 }
 
-console.log(getDayName(1)); // Output: "Senin"
-console.log(getDayName(5)); // Output: "Jumat"
-console.log(getDayName(8)); // Output: "Nomor hari tidak valid"
+console.log(getDayName(1),"Line 271 (soal 9)"); // Output: "Senin"
+console.log(getDayName(5),"Line 272 (soal 9)"); // Output: "Jumat"
+console.log(getDayName(8),"Line 273 (soal 9)"); // Output: "Nomor hari tidak valid"
 
 
 
@@ -212,10 +289,15 @@ console.log(getDayName(8)); // Output: "Nomor hari tidak valid"
 
 function reverseArray(arr) {
     // code disini yaa
+    let revArr = []
+    for (let index = arr.length - 1; index >= 0 ; index--) {
+        revArr.push(arr[index])
+    }
+    return revArr
 }
 
-console.log(reverseArray([1, 2, 3, 4, 5])); // Output: [5, 4, 3, 2, 1]
-console.log(reverseArray(['a', 'b', 'c'])); // Output: ['c', 'b', 'a']
+console.log(reverseArray([1, 2, 3, 4, 5]),"Line 299 (soal 10)"); // Output: [5, 4, 3, 2, 1]
+console.log(reverseArray(['a', 'b', 'c']),"Line 300 (soal 10)"); // Output: ['c', 'b', 'a']
 
 
 
@@ -225,9 +307,48 @@ console.log(reverseArray(['a', 'b', 'c'])); // Output: ['c', 'b', 'a']
  */
 
 const isPalindrome = (inputUser) => {
-
+    const inputArr = inputUser.toLowerCase().split(' ')
+    if (inputArr.length == 1) {
+        const char = inputArr[0].split('')
+        let revArr = []
+        for (let index = char.length - 1; index >= 0 ; index--) {
+            revArr.push(char[index])
+        }
+        let revWord
+        for (let index = 0; index < revArr.length; index++) {
+            if (index == 0) {
+                revWord = revArr[index]
+            } else {
+                revWord = revWord + revArr[index]
+            }
+        }
+        if(inputUser === revWord){
+            return true
+        } else{
+            return false
+        }
+    } else {
+        const char = inputArr[1].split('')
+        let revArr = []
+        for (let index = char.length - 1; index >= 0 ; index--) {
+            revArr.push(char[index])
+        }
+        let revWord
+        for (let index = 0; index < revArr.length; index++) {
+            if (index == 0) {
+                revWord = revArr[index]
+            } else {
+                revWord = revWord + revArr[index]
+            }
+        }
+        if(inputArr[0] === revWord){
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
-console.log(isPalindrome("kasur rusak")); // true
-console.log(isPalindrome("kodok")); // true
-console.log(isPalindrome("makan malam")); // false
+console.log(isPalindrome("kasur rusak"),"Line 352 (soal 11)"); // true
+console.log(isPalindrome("kodok"),"Line 353 (soal 11)"); // true
+console.log(isPalindrome("makan malam"),"Line 354 (soal 11)"); // false
