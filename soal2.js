@@ -5,7 +5,14 @@
  */
 
 function checkOddEven() {
-
+    if(typeof number !== "number"){
+            return "invalid input"
+        }
+        if(number % 2 === 0){
+            return "genap"
+        } else{
+            return "ganjil"
+        }
 }
 
 console.log(checkOddEven(5)); // ganjil
